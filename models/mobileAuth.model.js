@@ -12,7 +12,7 @@ const MobileAuthSchema = new mongoose.Schema({
   deviceid: {
     type: String,
     required: true
-  }, 
+  },
   _nichandle: {
     type: String,
     ref: "Mobile"

@@ -14,6 +14,8 @@ module.exports = () =>
 
     user.deviceid = req.headers["x-ovh-deviceid"];
     user.language = req.headers["x-ovh-langue"];
+
+    // temporary nichandle until we decide how send from mobile
     nic = req.cookies.NICHANDLE;
 
     if (nic) {
