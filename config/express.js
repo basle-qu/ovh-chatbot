@@ -13,6 +13,8 @@ const requestLogger = require("../providers/logging/request");
 const utilsMiddleware = require("./middlewares/utils");
 const cookieParser = require("cookie-parser");
 const verifyOvhUser = require("./middlewares/verifyOvhUser");
+const verifyMobileUser = require("./middlewares/verifyMobileUser");
+
 
 module.exports = function (config) {
   assert(config, "config for mongo is required");
@@ -58,6 +60,7 @@ module.exports = function (config) {
   app.use(bodyParser.json({ limit: "50mb", verify: verifyRequestSignature(config) }));
   app.use(cookieParser());
   app.use(`${config.server.basePath}/web`, verifyOvhUser());
+  app.use(`${config.server.basePath}/mobile`, verifyMobileUser());
   app.set("view engine", "ejs");
   app.use((req, res, next) => {
     if (process.env.NODE_IS_CLOSING !== "false") {

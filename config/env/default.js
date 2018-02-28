@@ -29,6 +29,10 @@ module.exports = {
     historyLength: 50,
     cacheTime: 2000
   },
+  mobile: {
+    historyLength: 50,
+    cacheTime: 2000
+  },
   ndhURL: process.env.NDH_URL,
   ndhTOKEN: process.env.NDH_TOKEN,
   maxMessageLength: 1000,

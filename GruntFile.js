@@ -95,6 +95,11 @@ module.exports = function (grunt) {
         "!<%= importDir %>",
         "!<%= outputDir %>"
       ]
+    },
+
+    watch: {
+      files: ["apiai/**','bots/**', 'config/**', 'controllers/**', 'diagnostics/**', 'models/**', 'platforms/**', 'providers/**', 'routes/**', 'tools/**', 'utils/**"],
+      tasks: ""
     }
   });
 
@@ -105,5 +110,7 @@ module.exports = function (grunt) {
   grunt.registerTask("import", ["clean:all", "json2apiai", "json2zip", "compress", "upload", "clean:all"]);
 
   grunt.registerTask("dev", ["clean:reset", "unzip", "zip2json", "apiai2json", "json2apiai", "json2zip", "compress"]);
+
+  grunt.loadNpmTasks("grunt-contrib-watch");
 
 };

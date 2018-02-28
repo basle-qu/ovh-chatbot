@@ -22,5 +22,6 @@ module.exports = function translator (key, locale, ...replacements) {
     // if no translation is provided, we resolved to the default.
     translation = _.get(require("../translations/translation_en_US.json"), key, key);
   }
+
   return vprintf(translation, replacements);
 };

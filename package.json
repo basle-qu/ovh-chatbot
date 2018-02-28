@@ -24,6 +24,8 @@
     "cookie-parser": "^1.4.3",
     "ejs": "^2.4.2",
     "express": "^4.14.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-express": "^1.4.1",
     "lodash": "^4.17.4",
     "memory-cache": "^0.2.0",
     "mongodb": "^2.2.11",
